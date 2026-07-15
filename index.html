@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
-
   <body style="background-color: #b6e2ff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-size: cover
 ; background-image: url(./website/images/Desktop.jpg)">
+    <img src="./website/images/Desktop.jpg" style="position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: -1;"/>
     <div style="display: flex; justify-content: space-between; align-items: center; color: rgb(0, 0, 0); border: solid; border-radius: 12px; background-color: #f0f9ff;">
       <h2 style="margin-left: 25px;">HamOS</h2>
       <p style="cursor: pointer" id="welcomeopen">Welcome!</p>
       <h2 id="timeElement" style="margin-right: 25px;">Time</h2>
     </div>
-    <div id="welcome" style="position:absolute; padding-bottom: 15px; text-align: center; position: absolute; top: 25%; left: 50%; 
+    <div style="cursor: pointer; padding-left: 20px; width: 96px; padding-top: 20%;">
+      <img src="./website/images/hamster-icon.png" id="hamsteropen" style="padding-top: 20%; width: 96px; height: 96px; object-fit: cover"/>
+        <h3 style="color: rgb(255, 255, 255); margin-top: -3px; padding-left: 5px; text-align: center;">My Hamster</h3>
+    </div>
+<div id="welcome" style="position:absolute; padding-bottom: 15px; text-align: center; position: absolute; top: 25%; left: 50%; 
 transform: translate(-50%, -50%); border: solid; width: 256px; border-radius: 12px; background-color: #f0f9ff;">
       <div id="welcomeheader" style="margin: 3px; border-radius: 8px; height: 30px; background-color: #0c1f2c; cursor: move; width: 250px;">
-        <h3 style="position: absolute; top: -12.5px; left: 88%; text-align: center; width: 25px; background-color: #f0f9ff; border-radius: 6px; cursor: pointer" id="welcomeclose">X</h3>
-        <p style="color: rgb(255, 255, 255); position: absolute; top: -10px; left: 5%; text-align: center;" id="welcomenadpis">Welcome!</p>
+        <h3 style="position: absolute; top: -12.5px; right: 6px; text-align: center; width: 25px; background-color: #f0f9ff; border-radius: 6px; cursor: pointer" id="welcomeclose">X</h3>
+        <p style="color: rgb(255, 255, 255); position: absolute; top: -10px; left: 15px; text-align: center;" id="welcomenadpis">Welcome!</p>
       </div>
         <div id="welcomecontent" style="padding-left: 10px; padding-top: 15px;">
             <h1>Welcome to HamOS</h1>
@@ -27,9 +31,15 @@ transform: translate(-50%, -50%); padding-left: 10px; border: solid; width: 256p
             <p style="text-align: center; padding-left: 3px; padding-right: 10px;">I'm friendly, lazy and I love hamsters. I like to do art, do stupid things and I understand everything about computers. I'm also from Czechia.</p>
           </div>
           <div id="hamster" style="position: absolute; top: 50%; left: 75%; 
-transform: translate(-50%, -50%); padding-left: 25px; padding-bottom: 25px; border: solid; width: 425px; border-radius: 12px; background-color: #f0f9ff;">
-          <p style="padding-left: 10%;">This is my hammy :>. His name is <a href="https://translate.google.cz/?sl=cs&tl=en&text=D%C5%BEambule&op=translate" target="_blank">Džambule</a></p>
-          <img src="./website/images/dzamboGIF.gif" style="border-radius: 12px; object-fit: cover"/>
+transform: translate(-50%, -50%); padding-bottom: 25px; border: solid; width: 425px; border-radius: 12px; background-color: #f0f9ff;">
+            <div id="hamsterheader" style="margin: 3px; border-radius: 8px; height: 30px; background-color: #0c1f2c; cursor: move;">
+              <h3 style="position: absolute; top: -12.5px; right: 6px; text-align: center; width: 25px; background-color: #f0f9ff; border-radius: 6px; cursor: pointer" id="hamsterclose">X</h3>
+              <p style="color: rgb(255, 255, 255); position: absolute; top: -10px; left: 15px; text-align: center;" id="hamsternadpis">Hamster</p>
+            </div>
+            <div style="padding-left: 10px; padding-top: 1px;">
+              <p style="padding-left: 10%;">This is my hammy :>. His name is <a href="https://translate.google.cz/?sl=cs&tl=en&text=D%C5%BEambule&op=translate" target="_blank">Džambule</a></p>
+              <img src="./website/images/dzamboGIF.gif" style="border-radius: 12px; object-fit: cover"/>
+            </div>
           </div> 
     <div id="songs" style="position: absolute; top: 50%; left: 25%; 
 transform: translate(-50%, -50%); padding-left: 25px; padding-bottom: 25px; border: solid; width: 485px; border-radius: 12px; background-color: #f0f9ff;">     
@@ -102,24 +112,40 @@ function dragElement(element) {
     document.onmousemove = null;
   }
 }
+// Tady pridavat od divu tam ty ty
+var welcomeScreen = document.querySelector("#welcome");
+var hamsterScreen = document.querySelector("#hamster");
 
-var welcomeScreen = document.querySelector("#welcome")
 function closeWindow(element) {
-  element.style.display = "none"
+    element.style.display = "none";
 }
+
 function openWindow(element) {
-  element.style.display = "block"
+    element.style.display = "block";
 }
-var welcomeScreenClose = document.querySelector("#welcomeclose")
-var welcomeScreenOpen = document.querySelector("#welcomeopen")
-welcomeScreenClose.addEventListener("click", function() {
-  closeWindow(welcomeScreen);
+
+var welcomeScreenClose = document.querySelector("#welcomeclose");
+var welcomeScreenOpen = document.querySelector("#welcomeopen");
+
+welcomeScreenClose.addEventListener("click", function () {
+    closeWindow(welcomeScreen);
 });
 
-welcomeScreenOpen.addEventListener("click", function() {
-  openWindow(welcomeScreen);
+welcomeScreenOpen.addEventListener("click", function () {
+    openWindow(welcomeScreen);
+});
+// A takto zkopirovat pro dalsi divy
+var hamsterScreenClose = document.querySelector("#hamsterclose");
+var hamsterScreenOpen = document.querySelector("#hamsteropen");
+
+hamsterScreenClose.addEventListener("click", function () {
+    closeWindow(hamsterScreen);
+});
+
+hamsterScreenOpen.addEventListener("click", function () {
+    openWindow(hamsterScreen);
 });
   </script>
-  </body> In testing...
+  </body>
 
 </html>
