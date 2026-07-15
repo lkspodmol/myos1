@@ -7,27 +7,27 @@
       <h2 style="margin-left: 25px;">HamOS</h2>
       <h2 id="timeElement" style="margin-right: 25px;">Time</h2>
     </div>
-    <div>
-        <h1 style="padding-top: 15px; padding-bottom: 15px; text-align: center; position: absolute; top: 25%; left: 50%; 
-transform: translate(-50%, -50%); padding-left: 10px; border: solid; width: 256px; border-radius: 12px; background-color: #f0f9ff;">Welcome to HamOS</h1>
+    <div id="welcome" style="position:absolute; padding-top: 15px; padding-bottom: 15px; text-align: center; position: absolute; top: 25%; left: 50%; 
+transform: translate(-50%, -50%); padding-left: 10px; border: solid; width: 256px; border-radius: 12px; background-color: #f0f9ff;">
+        <h1>Welcome to HamOS</h1>
     </div>
-          <div style="position: absolute; top: 50%; left: 50%; 
+          <div id="introduction" style="position: absolute; top: 50%; left: 50%; 
 transform: translate(-50%, -50%); padding-left: 10px; border: solid; width: 256px; border-radius: 12px; background-color: #f0f9ff;">
             <h2 style="text-align: center;">Introduction</h2>
             <p style="text-align: center;">Hi, I'm Lukas.<br>
                Not Luka or Luke.<br></p>
             <p style="text-align: center; padding-left: 3px; padding-right: 10px;">I'm friendly, lazy and I love hamsters. I like to do art, do stupid things and I understand everything about computers. I'm also from Czechia.</p>
           </div>
-          <div style="position: absolute; top: 50%; left: 75%; 
+          <div id="hamster" style="position: absolute; top: 50%; left: 75%; 
 transform: translate(-50%, -50%); padding-left: 25px; padding-bottom: 25px; border: solid; width: 425px; border-radius: 12px; background-color: #f0f9ff;">
           <p style="padding-left: 10%;">This is my hammy :>. His name is <a href="https://translate.google.cz/?sl=cs&tl=en&text=D%C5%BEambule&op=translate" target="_blank">Džambule</a></p>
           <img src="./website/images/dzamboGIF.gif" style="border-radius: 12px; object-fit: cover"/>
           </div> 
-    <div style="position: absolute; top: 50%; left: 25%; 
+    <div id="songs" style="position: absolute; top: 50%; left: 25%; 
 transform: translate(-50%, -50%); padding-left: 25px; padding-bottom: 25px; border: solid; width: 485px; border-radius: 12px; background-color: #f0f9ff;">     
-    <p>My favourite songs:</p>
-    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/4fHug3zCanK33sdvticISi?utm_source=generator&si=81a8feb256c747d8" width="458" height="171" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-    <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/4K0odcECsBvgzv9Lr9z4kd?utm_source=generator&si=102bbfcd8cbd47d8" width="458" height="171" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <p>My favourite songs:</p>
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/4fHug3zCanK33sdvticISi?utm_source=generator&si=81a8feb256c747d8" width="458" height="171" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/4K0odcECsBvgzv9Lr9z4kd?utm_source=generator&si=102bbfcd8cbd47d8" width="458" height="171" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
     </div>
   <script>
     function updateTime() {
@@ -36,6 +36,64 @@ transform: translate(-50%, -50%); padding-left: 25px; padding-bottom: 25px; bord
       timeText.innerHTML = currentTime
     }
     setInterval(updateTime, 1000);
+
+    // Make the DIV element draggable:
+dragElement(document.getElementById("welcome"));
+dragElement(document.getElementById("introduction"));
+dragElement(document.getElementById("hamster"));
+dragElement(document.getElementById("songs"));
+
+// Step 1: Define a function called `dragElement` that makes an HTML element draggable.
+function dragElement(element) {
+  // Step 2: Set up variables to keep track of the element's position.
+  var initialX = 0;
+  var initialY = 0;
+  var currentX = 0;
+  var currentY = 0;
+
+  // Step 3: Check if there is a special header element associated with the draggable element.
+  if (document.getElementById(element.id + "header")) {
+    // Step 4: If present, assign the `dragMouseDown` function to the header's `onmousedown` event.
+    // This allows you to drag the window around by its header.
+    document.getElementById(element.id + "header").onmousedown = startDragging;
+  } else {
+    // Step 5: If not present, assign the function directly to the draggable element's `onmousedown` event.
+    // This allows you to drag the window by holding down anywhere on the window.
+    element.onmousedown = startDragging;
+  }
+
+  // Step 6: Define the `startDragging` function to capture the initial mouse position and set up event listeners.
+  function startDragging(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // Step 7: Get the mouse cursor position at startup.
+    initialX = e.clientX;
+    initialY = e.clientY;
+    // Step 8: Set up event listeners for mouse movement (`elementDrag`) and mouse button release (`closeDragElement`).
+    document.onmouseup = stopDragging;
+    document.onmousemove = dragElement;
+  }
+
+  // Step 9: Define the `elementDrag` function to calculate the new position of the element based on mouse movement.
+  function dragElement(e) {
+    e = e || window.event;
+    e.preventDefault();
+    // Step 10: Calculate the new cursor position.
+    currentX = initialX - e.clientX;
+    currentY = initialY - e.clientY;
+    initialX = e.clientX;
+    initialY = e.clientY;
+    // Step 11: Update the element's new position by modifying its `top` and `left` CSS properties.
+    element.style.top = (element.offsetTop - currentY) + "px";
+    element.style.left = (element.offsetLeft - currentX) + "px";
+  }
+
+  // Step 12: Define the `stopDragging` function to stop tracking mouse movement by removing the event listeners.
+  function stopDragging() {
+    document.onmouseup = null;
+    document.onmousemove = null;
+  }
+}
   </script>
   </body> In testing...
 
