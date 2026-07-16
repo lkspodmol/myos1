@@ -77,7 +77,7 @@ function updateTime() {
   timeText.innerHTML = currentTime
 }
 setInterval(updateTime, 1000);
-
+//apky
 dragElement(document.getElementById("welcome"));
 dragElement(document.getElementById("introduction"));
 dragElement(document.getElementById("hamster"));
@@ -152,11 +152,11 @@ var welcomeScreen = document.querySelector("#welcome");
 var hamsterScreen = document.querySelector("#hamster");
 var introductionScreen = document.querySelector("#introduction");
 var songsScreen = document.querySelector("#songs");
-
+// neotevrene pri startu
 introductionScreen.style.display = "none";
 hamsterScreen.style.display = "none";
 songsScreen.style.display = "none";
-
+//apky
 addWindowTapHandling(welcomeScreen);
 addWindowTapHandling(introductionScreen);
 addWindowTapHandling(hamsterScreen);
@@ -185,7 +185,7 @@ introductionScreenClose.addEventListener("click", function(e) {
 introductionScreenOpen.addEventListener("click", function() {
   openWindow(introductionScreen);
 });
-//start
+//start kopirovani
 var hamsterScreenClose = document.querySelector("#hamsterclose");
 var hamsterScreenOpen = document.querySelector("#hamsteropen");
 
@@ -197,7 +197,7 @@ hamsterScreenClose.addEventListener("click", function(e) {
 hamsterScreenOpen.addEventListener("click", function() {
   openWindow(hamsterScreen);
 });
-//konec
+//konec kopirovani
 // jenom takovy welcome screen kterej po nazdar neni
 var welcomeScreenClose = document.querySelector("#welcomeclose");
 
