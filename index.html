@@ -21,7 +21,7 @@
     height:100vh;
 ">
 <img id="loadingScreen" src="./website/images/crt/f11.jpg" style="pointer-events: none; animation: fadeOut 0.5s ease-in forwards; animation-delay: 2s; position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 999999;"/>
-    <img src="./website/images/crt/crt.jpg" style="width:100%; height:100%; display:block;"/>
+    <img src="./website/images/crt/crt2.jpg" style="width:100%; height:100%; display:block;"/>
     <div>
       <iframe id="hamos"
     src="./index-old.html"
@@ -76,6 +76,9 @@
 const button = document.getElementById("onbutton");
 const onLed = document.getElementById("on");
 const iframe = document.getElementById("hamos");
+const sound = new Audio("./website/images/crt/power-sound.mp3");
+const sound2 = new Audio("./website/images/crt/boot-sound.mp3");
+const sound3 = new Audio("./website/images/crt/power-button-sound.mp3");
 
 let powerOn = false;
 
@@ -84,6 +87,7 @@ button.addEventListener("click", () => {
 
     if (powerOn) {
         iframe.src = iframe.src;
+        sound.play();
         setTimeout(() => {
             onLed.style.visibility = "visible";
         }, 200);
@@ -112,7 +116,7 @@ button.addEventListener("click", () => {
             onLed.style.visibility = "hidden";
         }, 4500);
         setTimeout(() => {
-            onLed.style.visibility = "visible";
+            onLed.style.visibility = "visible"; // tady na 5s se zobrazi loading...
         }, 5000);
         setTimeout(() => {
             onLed.style.visibility = "hidden";
@@ -120,11 +124,37 @@ button.addEventListener("click", () => {
         setTimeout(() => {
             onLed.style.visibility = "visible";
         }, 6000);
+        setTimeout(() => {
+            onLed.style.visibility = "hidden";
+        }, 6500);
+        setTimeout(() => {
+            onLed.style.visibility = "visible";
+        }, 7000);
+        setTimeout(() => {
+            onLed.style.visibility = "hidden";
+        }, 7500);
+        setTimeout(() => {
+            onLed.style.visibility = "visible";
+        }, 8000);
+        setTimeout(() => {
+            onLed.style.visibility = "hidden";
+        }, 8500);
+        setTimeout(() => {
+            onLed.style.visibility = "visible"; // tady uz nebude slyset boot up
+        }, 9000);
+        setTimeout(() => {
+            onLed.style.visibility = "hidden"; // nekde tady welcome sound jako win xp
+            sound2.play();
+        }, 9500);
+        setTimeout(() => {
+            onLed.style.visibility = "visible";
+        }, 10000);
     } else {
+        sound3.play();
         onLed.style.visibility = "hidden";
         iframe.style.visibility = "hidden";
     }
-}); // takze to =! je jako NOT gate, potom kdyz tak, ... listenuje pro klik a nahore pojmenovani
+}); // takze to =! je jako NOT gate, potom kdyz tak, ... listenuje pro klik a nahore pojmenovani, NAPADY: Background jako hobliny za crt, dalsi tlacitka uprosted na nastavovani monitoru, repraky ktere budou ´´skakat kdyz bude neco hrat, (udelat tady aby to nelezlo do index-old.html)  asddd wadbsd dsaasd adddsddd wadsddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsasddd wadbsd dsadddasdsdswda asdddwasd
 </script>
   </body>
 </html>
