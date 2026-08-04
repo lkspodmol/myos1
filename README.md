@@ -1,4 +1,4 @@
-# myos1
+# myos1 (now myos2)
 My first project for https://stardance.hackclub.com
 
 This is HamOS (Not ham, but ham-ster) (https://jams.hackclub.com/batch/webOS), that will be about my hamster Džambule.
