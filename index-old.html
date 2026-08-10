@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=0.5">
 </head>
   <style>
 
@@ -12,21 +12,16 @@
 }
 
   </style>
-  <body style="margin: 0; padding: 0; height: 100vh; width: 100vw; overflow: hidden; background-color: #b6e2ff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-size: cover; background-image: url(./website/images/Desktop.jpg); background-position: center;">
-    <img id="loadingScreen" src="./website/images/loading-done.jpg" style="pointer-events: none; animation: fadeOut 2.5s ease-in forwards; animation-delay: 10.6s; position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 999998;"/>
-    <img id="loadingScreen" src="./website/images/loading.jpg" style="pointer-events: none; animation: fadeOut 1.2s ease-in forwards; animation-delay: 9.4s; position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 999999;"/>
-    <picture src="./website/images/Desktop.jpg" style="position: absolute; width: 100%; height: 100%; object-fit: cover;"/>
-    <div id="top" style="display: flex; justify-content: space-between; align-items: center; color: rgb(0, 0, 0); border: solid; border-radius: 12px; background-color: #f0f9ff;">
-      <h2 style="margin-left: 25px; color: rgb(255, 89, 24);">HamOS 🐹</h2>
-<!---       <div style="display: flex; gap: 10px; margin-left: 162px;">
-          <a href="https://www.instagram.com/hamster_ofthe__world"><h2 style="color: rgb(255, 89, 24);">Doomscrolling</h2></a>
-          <a href="https://stardance.hackclub.com/@Luksus/projects"><h2 style="color: rgb(255, 89, 24);">My human</h2></a>
-          <a href="https://www.superzoo.cz/krmivo-nature-hamster-pro-krecky-700g/"><h2 style="color: rgb(255, 89, 24);">Food</h2></a>
-        </div> -->
-      <h2 id="timeElement" style="color: rgb(255, 89, 24); margin-right: 25px;">Time</h2>
-    </div>
+<body style="margin: 0; padding: 0; height: 100vh; width: 100vw; overflow: hidden; background-color: #b6e2ff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-size: cover; background-image: url(./website/images/Desktop.jpg); background-position: center;">
+  <img id="loadingScreen" src="./website/images/loading-done.jpg" style="pointer-events: none; animation: fadeOut 2.5s ease-in forwards; animation-delay: 10.6s; position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 999998;"/>
+  <img id="loadingScreen" src="./website/images/loading.jpg" style="pointer-events: none; animation: fadeOut 1.2s ease-in forwards; animation-delay: 9.4s; position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 999999;"/>
+<div id="top" style="position: fixed; top: 0; left: 0; display: flex; justify-content: space-between; align-items: center; color: rgb(0, 0, 0); border: solid; border-radius: 12px; background-color: #f0f9ff; z-index: 999999; margin: 4px; box-sizing: border-box; transform-origin: top left; margin-right: 4px;">
+    <h2 style="margin-left: 25px; color: rgb(255, 89, 24);">HamOS 🐹</h2>
+    <h2 id="timeElement" style="color: rgb(255, 89, 24); margin-right: 25px;">Time</h2>
+</div>
+  <div id="desktop" style="width: 1920px; height: 1080px; transform-origin: top left;">    
 <!-- Sem pridavat icony na desktop -->
-    <div style="cursor: pointer; padding-left: 20px; width: 96px; padding-top: 20px;">
+    <div style="cursor: pointer; padding-left: 20px; width: 96px; padding-top: 130px;">
       <img src="./website/images/hamster-icon.png" id="hamsteropen" style="padding-top: 20%; width: 96px; height: 96px; object-fit: cover"/>
         <h3 style="color: rgb(255, 255, 255); margin-top: -3px; padding-left: 5px; text-align: center;">About me</h3>
       <img src="./website/images/introduction.jpg" id="introductionopen" style="padding-top: 20%; width: 96px; height: 96px; object-fit: cover"/>
@@ -35,26 +30,28 @@
         <h3 style="color: rgb(255, 255, 255); margin-top: -3px; margin-left: 3px; text-align: center;">Hamify Free</h3>
       <img src="./website/images/photos.jpg" id="photosopen" style="padding-top: 20%; width: 96px; height: 96px; object-fit: cover"/>
         <h3 style="color: rgb(255, 255, 255); margin-top: -3px; margin-left: 3px; text-align: center;">Photos</h3>
-      <div style="padding-left: 150px; width: 96px; margin-top: -725px;">
+      <div style="padding-left: 150px; width: 96px; margin-top: -718px;">
         <a href="https://www.superzoo.cz/potrava-pro-krecky/" rel="noopener noreferrer" target="_blank"><img src="./website/images/eshop.jpg" style="padding-top: 20%; width: 96px; height: 96px; object-fit: cover "/></a>
           <h3 style="color: rgb(255, 255, 255); margin-top: -3px; margin-left: 1px; text-align: center;">Shortcut: Eshop</h3>
         <a href="https://www.instagram.com/hamster_ofthe__world" rel="noopener noreferrer" target="_blank"><img src="./website/images/isntagram.jpg" style="padding-top: 20%; width: 96px; height: 96px; object-fit: cover "/></a>
           <h3 style="color: rgb(255, 255, 255); margin-top: -3px; margin-left: 1x; text-align: center;">Shortcut: Instagram</h3>
         <a href="https://stardance.hackclub.com/@Luksus" rel="noopener noreferrer" target="_blank"><img src="./website/images/stardance.jpg" style="padding-top: 20%; width: 96px; height: 96px; object-fit: cover "/></a>
           <h3 style="color: rgb(255, 255, 255); margin-top: -3px; margin-left: 1x; text-align: center;">Shortcut: Stardance</h3>
-        <a href="https://www.wikipepdia.org" rel="noopener noreferrer" target="_blank"><img src="./website/images/knowledge.jpg" style="padding-top: 20%; width: 96px; height: 96px; object-fit: cover "/></a>
+        <a href="https://www.wikipedia.org" rel="noopener noreferrer" target="_blank"><img src="./website/images/knowledge.jpg" style="padding-top: 20%; width: 96px; height: 96px; object-fit: cover "/></a>
           <h3 style="color: rgb(255, 255, 255); margin-top: -3px; margin-left: 1x; text-align: center;">Shortcut: Knowledge</h3>
-        <div style="padding-left: 150px; width: 96px; margin-top: -752px;">
+        <div style="padding-left: 150px; width: 96px; margin-top: -743px;">
           <img src="./website/images/coslop.jpg" id="coslopopen" style="padding-top: 20%; width: 96px; height: 96px; object-fit: cover"/>
             <h3 style="color: rgb(255, 255, 255); margin-top: -3px; margin-left: 3px; text-align: center;">Coslop</h3>
           <img src="./website/images/aboutme.png" id="helpopen" style="margin-top: 25px; padding-top: 20%; width: 96px; height: 96px; object-fit: cover"/>
             <h3 style="color: rgb(255, 255, 255); margin-top: -2px; margin-left: 3px; text-align: center;">Help</h3>
           <img src="./website/images/hamtogo.jpg" id="hamostogoopen" style="margin-top: 25px; padding-top: 20%; width: 96px; height: 96px; object-fit: cover"/>
             <h3 style="color: rgb(255, 255, 255); margin-top: -2px; margin-left: 3px; text-align: center;">HamOS To Go</h3>
+          <img src="./website/images/settings.jpg" id="settingsopen" style="padding-top: 20%; width: 96px; height: 96px; object-fit: cover"/>
+            <h3 style="color: rgb(255, 255, 255); margin-top: -2px; margin-left: 3px; text-align: center;">Settings</h3>
         </div>
       </div>       
     </div>
-<div id="welcome" style="border-width: 2px; border-style: solid; position:absolute; padding-bottom: 15px; text-align: center; position: absolute; top: 50%; left: 50%; 
+<div id="welcome" style="border-width: 2px; border-style: solid; position:absolute; padding-bottom: 15px; text-align: center; position: absolute; top: 40%; left: 34%; 
 transform: translate(-50%, -50%); border: solid; width: 256px; border-radius: 12px; background-color: #f0f9ff;">
       <div id="welcomeheader" style="margin: 3px; border-radius: 8px; height: 30px; background-color: rgb(255, 144, 101); cursor: move; width: 250px;">
         <h3 style="position: absolute; top: -12.5px; right: 6px; text-align: center; width: 25px; background-color: #f0f9ff; border-radius: 6px; cursor: pointer" id="welcomeclose">X</h3>
@@ -67,7 +64,6 @@ transform: translate(-50%, -50%); border: solid; width: 256px; border-radius: 12
             <img src="./website/images/hamster-introducrion.gif" style="padding-left: 2.5px; border-radius: 12px; object-fit: cover"/>
         </div>
       </div>
-    </div>
           <div id="introduction" style="position: absolute; top: 40%; left: 50%; 
 transform: translate(-50%, -50%); border: solid; width: 256px; border-radius: 12px; background-color: #f0f9ff;">
             <div id="introductionheader" style="margin: 3px; border-radius: 8px; height: 30px; background-color: rgb(255, 144, 101); cursor: move;">
@@ -81,7 +77,7 @@ transform: translate(-50%, -50%); border: solid; width: 256px; border-radius: 12
               <p style="text-align: center; padding-left: 10px; padding-right: 10px;">I'm the creator of HamOS and you are currently inside of my hamsters computer! Don't know how you got it, but have fun and don't break it!</p>
             </div>
           </div>
-          <div id="hamster" style="position: absolute; top: 50%; left: 50%; 
+          <div id="hamster" style="position: absolute; top: 50%; left: 34%; 
 transform: translate(-50%, -50%); padding-bottom: 25px; border: solid; width: 425px; border-radius: 12px; background-color: #f0f9ff;">
             <div id="hamsterheader" style="margin: 3px; border-radius: 8px; height: 30px; background-color: rgb(255, 144, 101); cursor: move;">
               <h3 style="position: absolute; top: -12.5px; right: 6px; text-align: center; width: 25px; background-color: #f0f9ff; border-radius: 6px; cursor: pointer" id="hamsterclose">X</h3>
@@ -92,7 +88,7 @@ transform: translate(-50%, -50%); padding-bottom: 25px; border: solid; width: 42
               <img src="./website/images/dzamboGIF.gif" style="padding-left: 2.5px; border-radius: 12px; object-fit: cover"/>
             </div>
           </div> 
-    <div id="songs" style="position: absolute; top: 40%; left: 50%; 
+    <div id="songs" style="position: absolute; top: 40%; left: 34%; 
 transform: translate(-50%, -50%); padding-bottom: 25px; border: solid; width: 485px; border-radius: 12px; background-color: #f0f9ff;">
       <div id="songsheader" style="margin: 3px; border-radius: 8px; height: 30px; background-color: rgb(255, 144, 101); cursor: move;">
         <h3 style="position: absolute; top: -12.5px; right: 6px; text-align: center; width: 25px; background-color: #f0f9ff; border-radius: 6px; cursor: pointer" id="songsclose">X</h3>
@@ -109,7 +105,7 @@ transform: translate(-50%, -50%); padding-bottom: 25px; border: solid; width: 48
         <iframe data-testid="embed-iframe" style="margin-bottom: -30px; border-radius:12px" src="https://open.spotify.com/embed/track/0t8vGVdJaU93uQYMNqViyf?utm_source=generator&si=7c88867a39d8469c" width="458" height="171" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
       </div>
     </div>
-    <div id="photos" style="position: absolute; top: 50%; left: 50%; 
+    <div id="photos" style="position: absolute; top: 50%; left: 34%; 
 transform: translate(-50%, -50%); padding-bottom: 25px; border: solid; width: 1050px; border-radius: 12px; background-color: #f0f9ff;">
       <div id="photosheader" style="margin: 3px; border-radius: 8px; height: 30px; background-color: rgb(255, 144, 101); cursor: move;">
         <h3 style="position: absolute; top: -12.5px; right: 6px; text-align: center; width: 25px; background-color: #f0f9ff; border-radius: 6px; cursor: pointer" id="photosclose">X</h3>
@@ -142,7 +138,7 @@ transform: translate(-50%, -50%); padding-bottom: 25px; border: solid; width: 10
         </a>
       </div>
     </div>
-    <div id="coslop" style="position: absolute; top: 40%; left: 50%; 
+    <div id="coslop" style="position: absolute; top: 40%; left: 34%; 
 transform: translate(-50%, -50%); padding-bottom: 25px; border: solid; width: 700px; border-radius: 12px; background-color: #f0f9ff;">
       <div id="coslopheader" style="margin: 3px; border-radius: 8px; height: 30px; background-color: rgb(255, 144, 101); cursor: move;">
         <h3 style="position: absolute; top: -12.5px; right: 6px; text-align: center; width: 25px; background-color: #f0f9ff; border-radius: 6px; cursor: pointer" id="coslopclose">X</h3>
@@ -165,7 +161,33 @@ transform: translate(-50%, -50%); padding-bottom: 25px; border: solid; width: 70
         </div>
       </div>
     </div>
-          <div id="help" style="position: absolute; top: 40%; left: 50%; 
+          <div id="settings" style="position: absolute; top: 40%; left: 34%; 
+transform: translate(-50%, -50%); border: solid; width: 550px; border-radius: 12px; background-color: #f0f9ff;">
+            <div id="settingsheader" style="margin: 3px; border-radius: 8px; height: 30px; background-color: rgb(255, 144, 101); cursor: move;">
+              <h3 style="position: absolute; top: -12.5px; right: 6px; text-align: center; width: 25px; background-color: #f0f9ff; border-radius: 6px; cursor: pointer" id="settingsclose">X</h3>
+              <p style="color: rgb(255, 255, 255); position: absolute; top: -10px; left: 15px; text-align: center;" id="settingsnadpis">Settings</p>
+            </div>
+            <div id="settingscontent">
+             <h1 style="margin-left: 200px; margin-top: 20px;">Styling:</h1>
+              <h2 style="margin-top: 30px; margin-left: 30px;">Primary color:</h2>
+                <div style="margin-left: 250px; margin-top: -50px; width: 30px; height: 30px; cursor: pointer; background-color: rgb(255, 144, 101);" onclick="changeTheme('rgb(255, 144, 101)')"></div>
+                <div style="margin-left: 290px; margin-top: -30px; width: 30px; height: 30px; cursor: pointer; background-color: rgb(240, 255, 101);" onclick="changeTheme('rgb(240, 255, 101)')"></div>
+                <div style="margin-left: 330px; margin-top: -30px; width: 30px; height: 30px; cursor: pointer; background-color: rgb(160, 255, 101);" onclick="changeTheme('rgb(160, 255, 101)')"></div>
+                <div style="margin-left: 370px; margin-top: -30px; width: 30px; height: 30px; cursor: pointer; background-color: rgb(101, 173, 255);" onclick="changeTheme('rgb(101, 173, 255)')"></div>
+                <div style="margin-left: 410px; margin-top: -30px; width: 30px; height: 30px; cursor: pointer; background-color: rgb(183, 101, 255);" onclick="changeTheme('rgb(183, 101, 255)')"></div>
+                <div style="margin-left: 450px; margin-top: -30px; width: 30px; height: 30px; cursor: pointer; background-color: rgb(255, 101, 242);" onclick="changeTheme('rgb(255, 101, 242)')"></div>
+                <div style="margin-left: 490px; margin-top: -30px; width: 30px; height: 30px; cursor: pointer; background-color: rgb(255, 101, 101);" onclick="changeTheme('rgb(255, 101, 101)')"></div>
+              <h2 style="margin-top: 30px; margin-left: 30px;">Wallpaper:</h2>
+              <div style="padding-bottom: 40px; display: flex; gap: 10px; margin-left: 30px; margin-top: 10px;">
+                <div style="width: 80px; height: 50px; cursor: pointer; border: 2px solid transparent; background-size: cover; background-image: url(./website/images/Desktop.jpg);" onclick="changeWallpaper('./website/images/Desktop.jpg', this)"></div>
+                <div style="width: 80px; height: 50px; cursor: pointer; border: 2px solid transparent; background-size: cover; background-image: url(./website/images/Desktop5.jpg);" onclick="changeWallpaper('./website/images/Desktop5.jpg', this)"></div>
+                <div style="width: 80px; height: 50px; cursor: pointer; border: 2px solid transparent; background-size: cover; background-image: url(./website/images/Desktop3.jpg);" onclick="changeWallpaper('./website/images/Desktop3.jpg', this)"></div>
+                <div style="width: 80px; height: 50px; cursor: pointer; border: 2px solid transparent; background-size: cover; background-image: url(./website/images/Desktop4.jpg);" onclick="changeWallpaper('./website/images/Desktop4.jpg', this)"></div>
+                <div style="width: 80px; height: 50px; cursor: pointer; border: 2px solid transparent; background-size: cover; background-image: url(./website/images/Desktop2.jpg);" onclick="changeWallpaper('./website/images/Desktop2.jpg', this)"></div>
+              </div>
+            </div>
+          </div>
+          <div id="help" style="position: absolute; top: 40%; left: 34%; 
 transform: translate(-50%, -50%); border: solid; width: 550px; border-radius: 12px; background-color: #f0f9ff;">
             <div id="helpheader" style="margin: 3px; border-radius: 8px; height: 30px; background-color: rgb(255, 144, 101); cursor: move;">
               <h3 style="position: absolute; top: -12.5px; right: 6px; text-align: center; width: 25px; background-color: #f0f9ff; border-radius: 6px; cursor: pointer" id="helpclose">X</h3>
@@ -179,11 +201,15 @@ transform: translate(-50%, -50%); border: solid; width: 550px; border-radius: 12
                 <p style="margin-left: 41px; margin-top: -38.5px; margin-right: 20px;">Most modern sites do not allow you to open them in iframe for security purposes.</p>
               <h4 style="margin-left: 20px; margin-top: 35px;">Q: Why isn't the screen showing full content of HamOS</h4>
                 <p style="margin-left: 21px; margin-top: -15px; margin-right: 20px;">A:</p>
-                <p style="margin-left: 41px; margin-top: -38.5px; margin-right: 20px;">Only 1920x1080 is fully supported for now. Sorry! In the mean time, you can try scaling the website.</p>
-            <p style="padding-top: 20px; margin-left: 38px; margin-bottom: 10px; color: #a8a8a8ea; font-size: small; ">Still have questions? Please comment under one of my devlogs on <a style="color: #a8a8a8ea;" href="https://stardance.hackclub.com/projects/30933" rel="noopener noreferrer" target="_blank">stardance!</a></p>
+                <p style="margin-left: 41px; margin-top: -38.5px; margin-right: 20px;">You may have a resolution that hasn't been tested yet. Resolutions from 720p to 4096p work flawlessly.</p>
+              <h4 style="margin-left: 21px; margin-top: 30px; margin-right: 20px;">Q:</h4>
+              <h4 style="margin-left: 41px; margin-top: -43px; margin-right: 20px;">Why is my mouse pointer slower or faster when handling app windows?</h4>
+                <p style="margin-left: 21px; margin-top: -15px; margin-right: 20px;">A:</p>
+                <p style="margin-left: 41px; margin-top: -38.5px; margin-right: 20px;">HamOS uses function transform scale in html. That's why.</p>
+              <p style="padding-top: 20px; margin-left: 38px; margin-bottom: 10px; color: #a8a8a8ea; font-size: small; ">Still have questions? Please comment under one of my devlogs on <a style="color: #a8a8a8ea;" href="https://stardance.hackclub.com/projects/30933" rel="noopener noreferrer" target="_blank">stardance!</a></p>
             </div>
           </div>
-          <div id="hamostogo" style="position: absolute; top: 40%; left: 50%; 
+          <div id="hamostogo" style="position: absolute; top: 40%; left: 34%; 
 transform: translate(-50%, -50%); border: solid; width: 550px; border-radius: 12px; background-color: #f0f9ff;">
             <div id="hamostogoheader" style="margin: 3px; border-radius: 8px; height: 30px; background-color: rgb(255, 144, 101); cursor: move;">
               <h3 style="position: absolute; top: -12.5px; right: 6px; text-align: center; width: 25px; background-color: #f0f9ff; border-radius: 6px; cursor: pointer" id="hamostogoclose">X</h3>
@@ -204,6 +230,7 @@ transform: translate(-50%, -50%); border: solid; width: 550px; border-radius: 12
               </div>
             </div>
           </div>
+  </div> 
 <script>
 function updateTime() {
   var currentTime = new Date().toLocaleString();
@@ -220,6 +247,7 @@ dragElement(document.getElementById("photos"));
 dragElement(document.getElementById("coslop"));
 dragElement(document.getElementById("help"));
 dragElement(document.getElementById("hamostogo"));
+dragElement(document.getElementById("settings"));
 
 function dragElement(element) {
   var initialX = 0;
@@ -294,6 +322,7 @@ var photosScreen = document.querySelector("#photos");
 var coslopScreen = document.querySelector("#coslop");
 var helpScreen = document.querySelector("#help");
 var hamostogoScreen = document.querySelector("#hamostogo");
+var settingsScreen = document.querySelector("#settings");
 // neotevrene pri startu
 introductionScreen.style.display = "none";
 hamsterScreen.style.display = "none";
@@ -302,6 +331,7 @@ photosScreen.style.display = "none";
 coslopScreen.style.display = "none";
 helpScreen.style.display = "none";
 hamostogoScreen.style.display = "none";
+settingsScreen.style.display = "none";
 
 //apky
 addWindowTapHandling(welcomeScreen);
@@ -311,6 +341,7 @@ addWindowTapHandling(songsScreen);
 addWindowTapHandling(coslopScreen);
 addWindowTapHandling(helpScreen);
 addWindowTapHandling(hamostogoScreen);
+addWindowTapHandling(settingsScreen);
 
 var hamostogoScreenClose = document.querySelector("#hamostogoclose");
 var hamostogoScreenOpen = document.querySelector("#hamostogoopen");
@@ -383,6 +414,18 @@ introductionScreenClose.addEventListener("click", function(e) {
 introductionScreenOpen.addEventListener("click", function() {
   openWindow(introductionScreen);
 });
+
+var settingsScreenClose = document.querySelector("#settingsclose");
+var settingsScreenOpen = document.querySelector("#settingsopen");
+
+settingsScreenClose.addEventListener("click", function(e) {
+  e.stopPropagation();
+  closeWindow(settingsScreen);
+});
+
+settingsScreenOpen.addEventListener("click", function() {
+  openWindow(settingsScreen);
+});
 //start kopirovani
 var hamsterScreenClose = document.querySelector("#hamsterclose");
 var hamsterScreenOpen = document.querySelector("#hamsteropen");
@@ -397,6 +440,7 @@ hamsterScreenOpen.addEventListener("click", function() {
 });
 //konec kopirovani
 // jenom takovy welcome screen kterej po nazdar neni
+
 
 var welcomeScreenClose = document.querySelector("#welcomeclose");
 
@@ -443,11 +487,55 @@ coslopForm.addEventListener("submit", function (event) {
   }
 });
 
+const desktop = document.getElementById("desktop");
+topBar = document.getElementById("top");
+
+function updateScale() {
+    const ratio = Math.min(
+        window.innerWidth / 1920,
+        window.innerHeight / 1080
+    );
+
+    const scale = ratio * 1.5;
+    
+    desktop.style.transform = `scale(${scale})`;
+    desktop.style.transformOrigin = "top left";
+    
+    const topBarWidth = (100 / scale) - (8 / window.innerWidth * 100);
+    topBar.style.width = `${topBarWidth}%`;
+    topBar.style.transform = `scale(${scale})`;
+    topBar.style.transformOrigin = "top left";
+    topBar.style.marginLeft = `${3 / scale}px`;
+}
+
+window.addEventListener("resize", updateScale);
+updateScale();
+
+function changeTheme(color) {
+    var headers = document.querySelectorAll('[id$="header"]');
+    headers.forEach(function(header) {
+        header.style.backgroundColor = color;
+    });
+    
+    var topBarTexts = topBar.querySelectorAll('h2');
+    topBarTexts.forEach(function(text) {
+        text.style.color = color;
+    });
+}
+
+function changeWallpaper(imageUrl, element) {
+    if (imageUrl === 'none') {
+        document.body.style.backgroundImage = 'none';
+    } else {
+        document.body.style.backgroundImage = `url(${imageUrl})`;
+    }
+}
+
 welcomeScreen.style.zIndex = 1;
 topBar.style.zIndex = 2;
-// A takto zkopirovat pro dalsi divy
 
-//Napady: Ham to Tab (Jako wintousb), Pridat widgety na pravou stranu jako ve Win vista O:, Fotky krecka s ikonou fotky z ifonu, loading screen na zacatku pomoci image hned za body,transparent gif s kreckem ktery se bude pohybovat po plose?hmmm notesky apku kde uz bude neco napsane, snake hra (WSWSADADBAENTER), wifi menu s random wifi a random jakekoliv password terminal, QnA help app, Themes app that will change the colour of the orange, BIG HELP: https://www.w3schools.com, https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements
+//Napady:Pridat widgety na pravou stranu jako ve Win vista O: hmmm notesky apku kde uz bude neco napsane, snake hra (WSWSADADBAENTER), wifi menu s random wifi a random jakekoliv password terminal BIG HELP: https://www.w3schools.com, https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements
+
   </script>
   </body>
 

@@ -20,7 +20,7 @@
     align-items:center;
     height:100vh;
 ">
-<img id="loadingScreen" src="./website/images/crt/f11.jpg" style="pointer-events: none; animation: fadeOut 0.5s ease-in forwards; animation-delay: 2s; position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 999999;"/>
+    <img id="loadingScreen" src="./website/images/crt/f11.jpg" style="pointer-events: none; animation: fadeOut 0.5s ease-in forwards; animation-delay: 2s; position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 999999;"/>
     <img src="./website/images/crt/crt2.jpg" style="width:100%; height:100%; display:block;"/>
     <div>
       <iframe id="hamos"
@@ -37,6 +37,18 @@
           visibility:hidden;
       ">
 </iframe>
+    </div>
+    <div style="
+      position:absolute;
+      right:35%;
+      bottom:-2%;
+      width:6.5%;
+      padding:0;
+      border:none;
+      background:transparent;
+    ">
+      <img src="./website/images/crt/paper.png" style="width:200%; height:200%;">
+    </div>
     </div>
     <div id="onbutton" style="
       position:absolute;
@@ -154,7 +166,7 @@ button.addEventListener("click", () => {
         onLed.style.visibility = "hidden";
         iframe.style.visibility = "hidden";
     }
-}); // takze to =! je jako NOT gate, potom kdyz tak, ... listenuje pro klik a nahore pojmenovani, NAPADY: Mute button, Background jako hobliny za crt, dalsi tlacitka uprosted na nastavovani monitoru, repraky ktere budou ´´skakat kdyz bude neco hrat, NEZAPOMENOUT NA TEN ZLUTY PAPIR V /CRT (udelat tady aby to nelezlo do index-old.html)
+}); // takze to =! je jako NOT gate, potom kdyz tak, ...
 </script>
   </body>
 </html>
