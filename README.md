@@ -16,7 +16,7 @@ Everything you will need to find out (Help, etc...) is in HamOS. Otherwise, pela
 
 
 
-### Special features om HamOS:
+### Very very special features of HamOS:
 - The OS isnt for you, its for Džambule and you somehow got in
 - Because its for my hamster, you will see a crt computer (his computer)
 - You explore his system and have fun
