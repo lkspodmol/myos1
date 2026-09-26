@@ -17,11 +17,7 @@ Everything you will need to find out (Help, etc...) is in HamOS. Otherwise, pela
 
 
 ### Very very special features of HamOS:
-- The OS isnt for you, its for Džambule and you somehow got in
-- Because its for my hamster, you will see a crt computer (his computer)
-- You explore his system and have fun
-- The text on the Floppy disk represents the version of HamOS you are using
-- Check out more features on HamOS
+- Find out yourself you lazy
 
 
 
