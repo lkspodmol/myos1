@@ -17,6 +17,18 @@
   <img id="loadingScreen" src="./website/images/loading.jpg" style="pointer-events: none; animation: fadeOut 1.2s ease-in forwards; animation-delay: 9.4s; position: fixed; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 999999;"/>
 <div id="top" style="position: fixed; top: 0; left: 0; display: flex; justify-content: space-between; align-items: center; color: rgb(0, 0, 0); border: solid; border-radius: 12px; background-color: #f0f9ff; z-index: 999999; margin: 4px; box-sizing: border-box; transform-origin: top left; margin-right: 4px;">
     <h2 style="margin-left: 25px; color: rgb(255, 89, 24);">HamOS 🐹</h2>
+    <div id="openappsheader" style="background-color: rgb(255, 89, 24); border-radius: 10px; height: 50px; margin-left: 100px; width: 314px;">
+      <div id="openapps" style="visibility: hidden;">
+        <img src="./website/images/hamster-icon.png" id="me-status" style="cursor: pointer; padding-top: 10px; width: 32px; height: 32px; object-fit: cover; padding-left: 15px"/>
+        <img src="./website/images/introduction.jpg" id="introduction-status" style="cursor: pointer; padding-top: 10px; width: 32px; height: 32px; object-fit: cover"/>
+        <img src="./website/images/spotify.png" id="spotify-status" style="cursor: pointer; padding-top: 10px; width: 32px; height: 32px; object-fit: cover"/>
+        <img src="./website/images/photos.jpg" id="photos-status" style="cursor: pointer; padding-top: 10px; width: 32px; height: 32px; object-fit: cover"/>
+        <img src="./website/images/coslop.jpg" id="coslop-status" style="cursor: pointer; padding-top: 10px; width: 32px; height: 32px; object-fit: cover"/>
+        <img src="./website/images/aboutme.png" id="help-status" style="cursor: pointer; padding-top: 10px; width: 32px; height: 32px; object-fit: cover"/>
+        <img src="./website/images/hamtogo.jpg" id="hamostogo-status" style="cursor: pointer; padding-top: 10px; width: 32px; height: 32px; object-fit: cover"/>
+        <img src="./website/images/settings.jpg" id="settings-status" style="cursor: pointer; padding-top: 10px; width: 32px; height: 32px; object-fit: cover"/>
+      </div>
+    </div>
     <h2 id="timeElement" style="color: rgb(255, 89, 24); margin-right: 25px;">Time</h2>
 </div>
   <div id="desktop" style="width: 1920px; height: 1080px; transform-origin: top left;"> 
@@ -488,6 +500,104 @@ welcomeScreenClose.addEventListener("click", function(e) {
   closeWindow(welcomeScreen);
 });
 
+// TADY OTEVRENE APKY NA TOP BARU 
+var meStat = document.querySelector("#me-status");
+var introductionStat = document.querySelector("#introduction-status");
+var spotifyStat = document.querySelector("#spotify-status");
+var photosStat = document.querySelector("#photos-status");
+var coslopStat = document.querySelector("#coslop-status");
+var helpStat = document.querySelector("#help-status");
+var hamostogoStat = document.querySelector("#hamostogo-status");
+var settingsStat = document.querySelector("#settings-status");
+
+
+hamsterScreenClose.addEventListener("click", function() {
+  meStat.style.visibility = "hidden";
+});
+
+hamsterScreenOpen.addEventListener("click", function() {
+  meStat.style.visibility = "visible";
+});
+
+introductionScreenClose.addEventListener("click", function() {
+  introductionStat.style.visibility = "hidden";
+});
+
+introductionScreenOpen.addEventListener("click", function() {
+  introductionStat.style.visibility = "visible";
+});
+
+songsScreenClose.addEventListener("click", function() {
+  spotifyStat.style.visibility = "hidden";
+});
+
+songsScreenOpen.addEventListener("click", function() {
+  spotifyStat.style.visibility = "visible";
+});
+
+photosScreenClose.addEventListener("click", function() {
+  photosStat.style.visibility = "hidden";
+});
+
+photosScreenOpen.addEventListener("click", function() {
+  photosStat.style.visibility = "visible";
+});
+
+coslopScreenClose.addEventListener("click", function() {
+  coslopStat.style.visibility = "hidden";
+});
+coslopScreenOpen.addEventListener("click", function() {
+  coslopStat.style.visibility = "visible";
+});
+
+helpScreenClose.addEventListener("click", function() {
+  helpStat.style.visibility = "hidden";
+});
+helpScreenOpen.addEventListener("click", function() {
+  helpStat.style.visibility = "visible";
+});
+
+hamostogoScreenClose.addEventListener("click", function() {
+  hamostogoStat.style.visibility = "hidden";
+});
+
+hamostogoScreenOpen.addEventListener("click", function() {
+  hamostogoStat.style.visibility = "visible";
+});
+
+settingsScreenClose.addEventListener("click", function() {
+  settingsStat.style.visibility = "hidden";
+});
+
+settingsScreenOpen.addEventListener("click", function() {
+  settingsStat.style.visibility = "visible";
+});
+//
+document.querySelector("#me-status").addEventListener("click", function() {
+  handleWindowTap(hamsterScreen);
+});
+document.querySelector("#introduction-status").addEventListener("click", function() {
+  handleWindowTap(introductionScreen);
+});
+document.querySelector("#spotify-status").addEventListener("click", function() {
+  handleWindowTap(songsScreen);
+});
+document.querySelector("#photos-status").addEventListener("click", function() {
+  handleWindowTap(photosScreen);
+});
+document.querySelector("#coslop-status").addEventListener("click", function() {
+  handleWindowTap(coslopScreen);
+});
+document.querySelector("#help-status").addEventListener("click", function() {
+  handleWindowTap(helpScreen);
+});
+document.querySelector("#hamostogo-status").addEventListener("click", function() {
+  handleWindowTap(hamostogoScreen);
+});
+document.querySelector("#settings-status").addEventListener("click", function() {
+  handleWindowTap(settingsScreen);
+});
+////
 
 var hamostogoStart = document.querySelector("#hamostogostart");
 var hamostogoLoad1 = document.querySelector("#hamostogoload1");
