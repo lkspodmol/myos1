@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+  <style>
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+  </style>
+  <body style="
+    margin:0;
+    background:#000;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+">
+    <img id="loadingScreen" src="../../website/images/f11.jpg" style="pointer-events: none; position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 999999;"/>
+    <img src="./images/crt.jpg" style="width:100%; height:100%; display:block;"/>
+    <div>
+      <iframe id="hamos"
+    src="../../index-old.html"
+      style="
+          position:absolute;
+          left:25.7%;
+          top:13%;
+          width:64%; 
+          height:81%;
+          border:none;
+          transform:scale(.8);
+          transform-origin:top left;
+          visibility:hidden;
+      ">
+</iframe>
+<!--    </div>
+    <div style="
+      position:absolute;
+      right:35%;
+      bottom:-2%;
+      width:6.5%;
+      padding:0;
+      border:none;
+      background:transparent;
+    ">
+      <img src="../../website/images/paper.png" style="width:200%; height:200%;">
+    </div> --->
+    <div style="
+      position:absolute;
+      right:23.6%;
+      bottom:11.5%;
+      width:6.5%;
+      padding:0;
+      border:none;
+      background:transparent;
+    ">
+      <img id="off" src="./images/off.png" style="width:35%; height:35%;">
+    </div>
+    <div style="
+      position:absolute;
+      right:23.6%;
+      bottom:11.5%;
+      width:6.5%;
+      padding:0;
+      border:none;
+      background:transparent;
+    ">
+      <img id="on" src="./images/on2.png" style="visibility:hidden; width:35%; height:35%;">
+    </div>
+    <div id="onbutton" style="
+      position:absolute;
+      right:20.5%;
+      bottom:7%;
+      width:6.5%;
+      padding:0;
+      border:none;
+      background:transparent;
+      cursor:pointer;
+    ">
+      <img src="./images/onbutton2.png" style="width:90%; height:90%;">
+    </div>
+    <div id="floppydisk" style="
+      position:absolute;
+      width:17%;
+      right:51.5%;
+      bottom:9.8%;
+      padding:0;
+      border:none;
+      background:transparent;
+      cursor:pointer;
+    ">
+      <img src="../../website/images/floppydisk.png" style="width:100%; height:100%;">
+    </div>
+<script>
+
+
+const button = document.getElementById("onbutton");
+const onLed = document.getElementById("on");
+const iframe = document.getElementById("hamos");
+const sound = new Audio("./images/power-sound.mp3");
+const sound2 = new Audio("./images/boot-sound.mp3");
+const sound3 = new Audio("./images/power-button-sound.mp3");
+
+let powerOn = false;
+
+button.addEventListener("click", () => {
+    powerOn = !powerOn;
+
+    if (powerOn) {
+        iframe.src = iframe.src;
+        sound.play();
+        setTimeout(() => {
+            onLed.style.visibility = "visible";
+        }, 200);
+        setTimeout(() => {
+            onLed.style.visibility = "hidden"; 
+        }, 1000);
+        setTimeout(() => {
+            onLed.style.visibility = "visible";
+        }, 1500);
+        setTimeout(() => {
+            onLed.style.visibility = "hidden";
+        }, 2000);
+        setTimeout(() => {
+            onLed.style.visibility = "visible";
+        }, 2500);
+        setTimeout(() => {
+            iframe.style.visibility = "visible";
+        }, 3000);
+        setTimeout(() => {
+            onLed.style.visibility = "hidden"; 
+        }, 3500);
+        setTimeout(() => {
+            onLed.style.visibility = "visible";
+        }, 4000);
+        setTimeout(() => {
+            onLed.style.visibility = "hidden";
+        }, 4500);
+        setTimeout(() => {
+            onLed.style.visibility = "visible"; // tady na 5s se zobrazi loading...
+        }, 5000);
+        setTimeout(() => {
+            onLed.style.visibility = "hidden";
+        }, 5500);
+        setTimeout(() => {
+            onLed.style.visibility = "visible";
+        }, 6000);
+        setTimeout(() => {
+            onLed.style.visibility = "hidden";
+        }, 6500);
+        setTimeout(() => {
+            onLed.style.visibility = "visible";
+        }, 7000);
+        setTimeout(() => {
+            onLed.style.visibility = "hidden";
+        }, 7500);
+        setTimeout(() => {
+            onLed.style.visibility = "visible";
+        }, 8000);
+        setTimeout(() => {
+            onLed.style.visibility = "hidden";
+        }, 8500);
+        setTimeout(() => {
+            onLed.style.visibility = "visible"; // tady uz nebude slyset boot up
+        }, 9000);
+        setTimeout(() => {
+            onLed.style.visibility = "hidden"; // nekde tady welcome sound jako win xp
+            sound2.play();
+        }, 9500);
+        setTimeout(() => {
+            onLed.style.visibility = "visible";
+        }, 10000);
+    } else {
+        sound3.play();
+        onLed.style.visibility = "hidden";
+        iframe.style.visibility = "hidden";
+    }
+}); // takze to =! je jako NOT gate, potom kdyz tak, ...
+
+let fullscreen = false;
+
+window.addEventListener("resize", function () {
+    const isFullscreen =
+        window.innerHeight === screen.height &&
+        window.innerWidth === screen.width;
+
+    if (isFullscreen && !fullscreen) {
+        document.querySelector("#loadingScreen").style.animation =
+            "fadeOut 0.5s ease-in forwards";
+    }
+    else
+    document.querySelector("#loadingScreen").style.animation =
+        "fadeIn 0.1s ease-in forwards";
+
+    fullscreen = isFullscreen;
+});
+</script>
+  </body>
+</html>

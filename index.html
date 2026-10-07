@@ -1,171 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&display=swap" rel="stylesheet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-  <style>
-
-@keyframes fadeOut {
-    from { opacity: 1; }
-    to { opacity: 0; }
+  <body style="margin:0; background:#000; display:flex; justify-content:center; align-items:center; height:100vh;">
+    <div style="top: 50; left: 50; background-color: grey; height: 300px; width: 900px; border-radius: 10px;">
+        <div id="style1" style="cursor: pointer; background-color: rgb(248, 217, 171); width: 400px; height: 250px; margin-top: 25px; margin-left: 25px; border-radius: 5px;">
+            <h1 style="margin-left: 100px; padding-top: 20px;">Classic style</h1>
+            <img id="on" src="./styles/0/1.png" style="width: 200px; height: 150px; border-radius: 7px; margin-left: 97px;">
+            <a style="color: #00000042; font-size: x-small; margin-left: 30px;" href="https://stardance.hackclub.com/@Luksus" rel="noopener noreferrer" target="_blank">By @Luksus</a>
+        </div>
+        <div id="style2" style="cursor: pointer; background-color: rgb(156, 211, 255); width: 400px; height: 250px; margin-top: -271.5px; margin-left: 470px; border-radius: 5px;">
+            <h1 style="margin-left: 100px; padding-top: 20px; font-family:Fuzzy Bubbles;">Bubble style</h1>
+            <img id="on" src="./styles/0/2.png" style="width: 200px; height: 150px; border-radius: 7px; margin-left: 97px;">
+            <a style="color: #00000042; font-size: x-small; margin-left: 30px;" href="https://stardance.hackclub.com/@Luksus" rel="noopener noreferrer" target="_blank">By @Luksus</a>
+        </div>
+            <p style="color: #a8a8a862; font-size: small; margin-top: 50px; margin-left: 250px;">Want to create more styles for HamOS? Check out this <a style="color: #a8a8a862;" href="https://stardance.hackclub.com/projects/30933/devlogs/63483" rel="noopener noreferrer" target="_blank">devlog!</a></p>
+    </div>
+    <a style="color: #a8a8a81f; position: absolute; margin-top: 550px;" href="./styles/0/secret.png" rel="noopener noreferrer" target="_blank">🐹</a>
+    <style>
+        .fuzzy-bubbles-regular {
+  font-family: "Fuzzy Bubbles", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
-  </style>
-  <body style="
-    margin:0;
-    background:#000;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-">
-    <img id="loadingScreen" src="./website/images/crt/f11.jpg" style="pointer-events: none; animation: fadeOut 0.5s ease-in forwards; animation-delay: 2s; position: absolute; width: 100%; height: 100%; object-fit: cover; z-index: 999999;"/>
-    <img src="./website/images/crt/crt2.jpg" style="width:100%; height:100%; display:block;"/>
-    <div>
-      <iframe id="hamos"
-    src="./index-old.html"
-      style="
-          position:absolute;
-          left:25.7%;
-          top:13%;
-          width:64%; 
-          height:81%;
-          border:none;
-          transform:scale(.8);
-          transform-origin:top left;
-          visibility:hidden;
-      ">
-</iframe>
-    </div>
-    <div style="
-      position:absolute;
-      right:35%;
-      bottom:-2%;
-      width:6.5%;
-      padding:0;
-      border:none;
-      background:transparent;
-    ">
-      <img src="./website/images/crt/paper.png" style="width:200%; height:200%;">
-    </div>
-    <div style="
-      position:absolute;
-      right:23.6%;
-      bottom:11.5%;
-      width:6.5%;
-      padding:0;
-      border:none;
-      background:transparent;
-    ">
-      <img id="off" src="./website/images/crt/off.png" style="width:35%; height:35%;">
-    </div>
-    <div style="
-      position:absolute;
-      right:23.6%;
-      bottom:11.5%;
-      width:6.5%;
-      padding:0;
-      border:none;
-      background:transparent;
-    ">
-      <img id="on" src="./website/images/crt/on2.png" style="visibility:hidden; width:35%; height:35%;">
-    </div>
-    <div id="onbutton" style="
-      position:absolute;
-      right:20.5%;
-      bottom:7%;
-      width:6.5%;
-      padding:0;
-      border:none;
-      background:transparent;
-      cursor:pointer;
-    ">
-      <img src="./website/images/crt/onbutton2.png" style="width:90%; height:90%;">
-    </div>
+.fuzzy-bubbles-bold {
+  font-family: "Fuzzy Bubbles", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+    </style>
 <script>
-const button = document.getElementById("onbutton");
-const onLed = document.getElementById("on");
-const iframe = document.getElementById("hamos");
-const sound = new Audio("./website/images/crt/power-sound.mp3");
-const sound2 = new Audio("./website/images/crt/boot-sound.mp3");
-const sound3 = new Audio("./website/images/crt/power-button-sound.mp3");
+document.querySelector("#style1").addEventListener("click", function () {
+    window.open("./styles/1/index.html", "_blank");
+});
 
-let powerOn = false;
-
-button.addEventListener("click", () => {
-    powerOn = !powerOn;
-
-    if (powerOn) {
-        iframe.src = iframe.src;
-        sound.play();
-        setTimeout(() => {
-            onLed.style.visibility = "visible";
-        }, 200);
-        setTimeout(() => {
-            onLed.style.visibility = "hidden"; 
-        }, 1000);
-        setTimeout(() => {
-            onLed.style.visibility = "visible";
-        }, 1500);
-        setTimeout(() => {
-            onLed.style.visibility = "hidden";
-        }, 2000);
-        setTimeout(() => {
-            onLed.style.visibility = "visible";
-        }, 2500);
-        setTimeout(() => {
-            iframe.style.visibility = "visible";
-        }, 3000);
-        setTimeout(() => {
-            onLed.style.visibility = "hidden"; 
-        }, 3500);
-        setTimeout(() => {
-            onLed.style.visibility = "visible";
-        }, 4000);
-        setTimeout(() => {
-            onLed.style.visibility = "hidden";
-        }, 4500);
-        setTimeout(() => {
-            onLed.style.visibility = "visible"; // tady na 5s se zobrazi loading...
-        }, 5000);
-        setTimeout(() => {
-            onLed.style.visibility = "hidden";
-        }, 5500);
-        setTimeout(() => {
-            onLed.style.visibility = "visible";
-        }, 6000);
-        setTimeout(() => {
-            onLed.style.visibility = "hidden";
-        }, 6500);
-        setTimeout(() => {
-            onLed.style.visibility = "visible";
-        }, 7000);
-        setTimeout(() => {
-            onLed.style.visibility = "hidden";
-        }, 7500);
-        setTimeout(() => {
-            onLed.style.visibility = "visible";
-        }, 8000);
-        setTimeout(() => {
-            onLed.style.visibility = "hidden";
-        }, 8500);
-        setTimeout(() => {
-            onLed.style.visibility = "visible"; // tady uz nebude slyset boot up
-        }, 9000);
-        setTimeout(() => {
-            onLed.style.visibility = "hidden"; // nekde tady welcome sound jako win xp
-            sound2.play();
-        }, 9500);
-        setTimeout(() => {
-            onLed.style.visibility = "visible";
-        }, 10000);
-    } else {
-        sound3.play();
-        onLed.style.visibility = "hidden";
-        iframe.style.visibility = "hidden";
-    }
-}); // takze to =! je jako NOT gate, potom kdyz tak, ...
+document.querySelector("#style2").addEventListener("click", function () {
+    window.open("./styles/2/index.html", "_blank");
+});
 </script>
   </body>
 </html>
+ <!--- PRIDAT HEZKEHO KRECKA NA HORU NA TO KTEREJ BUDE MIT PACKY PRES TO JAK ZE SE ZA TO DRZI A PRIDAT DO ROHU SECRET JAKO EMOJI KTEREJ PRESMERUJE NA FOTKU MEGA GIGA SIGMA SLEPICU FOTKU --->
